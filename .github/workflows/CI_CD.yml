@@ -29,23 +29,8 @@ jobs:
         
            
            ssh -o StrictHostKeyChecking=no  $PRIVATE_KEY ${USER_NAME}@${HOSTNAME} '
-           cd /home/ubuntu &&
-            git checkout main &&
-            git fetch --all &&
-            git reset --hard origin/main &&
-            git pull origin main &&
+           
            git clone https://avinashkhadgi30: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@github.com/avinashkhadgi30/Test.git
            '
-# #           echo "$PRIVATE_KEY" | tr -d '\r' | ssh-add -
-# #           - mkdir -p ~/.ssh
-# #           - chmod 700 ~/.ssh
-# #           #echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-# #           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
-          
-# #             #Now we have got the access of EC2 and we will start the deploy .
-# #           git clone https://avinashkhadgi30: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@github.com/avinashkhadgi30/Test.git
-# #            '
-           
-           
-           
+
            
