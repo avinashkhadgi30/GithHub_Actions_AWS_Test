@@ -28,7 +28,7 @@ jobs:
         
         
            
-           ssh -o StrictHostKeyChecking=no -i $PRIVATE_KEY ${USER_NAME}@${HOSTNAME} '
+           ssh -o StrictHostKeyChecking=no  $PRIVATE_KEY ${USER_NAME}@${HOSTNAME} '
            cd /home/ubuntu &&
             git checkout main &&
             git fetch --all &&
