@@ -6,17 +6,9 @@ on:
 
 jobs:
 #First we will see the application build or not , then we will deploy in EC2
-#   build:
-#     runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
     
-#     steps:
-#     - uses: actions/checkout@v2
-    
-#     - name: Build the docker_compose
-#       run: docker-compose up -d --build
-      
-#     - name: Buid the application
-#       run: docker-compose exec -T counter_app npm run build
 
   Deploy:
     runs-on: ubuntu-latest
@@ -29,18 +21,20 @@ jobs:
             HOSTNAME : ${{ secrets.HOSTNAME  }}
             USER_NAME : ${{ secrets.USER_NAME  }}
             
-        run: |
+       
+            
+#         run: |
         
         
-           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
-           cd /home/ubuntu &&
-            git checkout main &&
-            git fetch --all &&
-            git reset --hard origin/main &&
-            git pull origin main &&
-           git clone https://avinashkhadgi30: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@github.com/avinashkhadgi30/Test.git
-           '
+#            echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+#            ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+#            cd /home/ubuntu &&
+#             git checkout main &&
+#             git fetch --all &&
+#             git reset --hard origin/main &&
+#             git pull origin main &&
+#            git clone https://avinashkhadgi30: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@github.com/avinashkhadgi30/Test.git
+#            '
 # #           echo "$PRIVATE_KEY" | tr -d '\r' | ssh-add -
 # #           - mkdir -p ~/.ssh
 # #           - chmod 700 ~/.ssh
