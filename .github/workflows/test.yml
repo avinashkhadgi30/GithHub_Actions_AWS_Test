@@ -22,10 +22,17 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: executing ssh commands using ssh key
-        #uses: appleboy/ssh-action@master
-        uses: actions/checkout@v2 
-        with:
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+        with: 
+          # This will create a directory named `my-repo` and copy the repo contents to it
+          # so that you can easily upload it to your remote server
+          path: my-repo
+#     steps:
+#       - name: executing ssh commands using ssh key
+#         #uses: appleboy/ssh-action@master
+#         uses: actions/checkout@v2 
+       # with:
           host: ${{ secrets.HOSTNAME}}
           username: ubuntu
           key: ${{ secrets.AWS_PRIVATE_KEY }}
@@ -34,5 +41,12 @@ jobs:
             touch ne
             git clone https://github.com/avinashkhadgi30/Test.git
             whoami
-
+     
+      - name: Upload repo to remote server
+        env:
+           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+         ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+         ssh-add - <<< "${{ secrets.AWS_PRIVATE_KEY }}"
+         scp -o StrictHostKeyChecking=no -r -P 59666 my-repo ubuntu@154.86.184.152:/target/directory
 
