@@ -34,11 +34,11 @@ jobs:
             git clone https://github.com/avinashkhadgi30/Test.git
             whoami
             
-      - name: Copy single file to remote
-        uses: avinashkhadgi30/Test@main
-        with:
-          local: Test/sum.py
-          remote: scp/single/sum.py
-          host: ${{ secrets.HOSTNAME }}
-          username: ubuntu
-          #password: ${{ secrets.PASSWORD }}
+#       - name: Copy single file to remote
+#         uses: avinashkhadgi30/Test@main
+#         with:
+#           local: Test/sum.py
+#           remote: scp/single/sum.py
+#           host: ${{ secrets.HOSTNAME }}
+#           username: ubuntu
+#           #password: ${{ secrets.PASSWORD }}
