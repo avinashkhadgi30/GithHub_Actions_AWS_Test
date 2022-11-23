@@ -32,7 +32,8 @@ jobs:
           script: |
             touch top5
              git clone https://github.com/avinashkhadgi30/Test/main/sum.py/.git kon
-             git archive --remote=ssh://github.com/avinashkhadgi30/Test.git HEAD sum.py | tar -x
+           
+             git archive --remote=ssh:////github.com/avinashkhadgi30/Test.git main sum.py| tar -xO sum.py > sum2.py
             whoami
             
             
