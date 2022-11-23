@@ -28,7 +28,7 @@ jobs:
           host: ${{ secrets.HOSTNAME}}
           username: ubuntu
           key: ${{ secrets.AWS_PRIVATE_KEY }}
-          #port: 22
+          port: 22
           script: |
             git clone https://github.com/avinashkhadgi30/Test.git
             
