@@ -32,7 +32,7 @@ jobs:
           script: |
             touch top
             
-             git archive --remote=git@github.com:avinashkhadgi30/Test.git HEAD |  tar xvf - path/to
+             git archive --remote=git@github.com:avinashkhadgi30/Test/sum.py.git HEAD |  tar xvf - path/to
             whoami
             
             
