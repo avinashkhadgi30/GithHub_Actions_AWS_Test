@@ -23,14 +23,15 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: executing ssh commands using ssh key
-        uses: appleboy/ssh-action@master
+       # uses: appleboy/ssh-action@master
+      - uses: actions/checkout@v2 
         with:
           host: ${{ secrets.HOSTNAME}}
           username: ubuntu
           key: ${{ secrets.AWS_PRIVATE_KEY }}
           port: 22
           script: |
-            touch samplenew
+            touch snew
             git clone https://github.com/avinashkhadgi30/Test.git
             whoami
 
