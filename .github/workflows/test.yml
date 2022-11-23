@@ -30,6 +30,7 @@ jobs:
           key: ${{ secrets.AWS_PRIVATE_KEY }}
           port: 22
           script: |
+            touch def
             git clone https://github.com/avinashkhadgi30/Test.git
             whoami
 
