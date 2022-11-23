@@ -38,16 +38,20 @@ jobs:
           key: ${{ secrets.AWS_PRIVATE_KEY }}
           port: 22
           script: |
-            touch ne
+            touch top
             git clone https://github.com/avinashkhadgi30/Test.git
             whoami
             
      
-      - name: Upload repo to remote server
-        env:
-           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: |
-         ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-         ssh-add - <<< "${{ secrets.AWS_PRIVATE_KEY }}"
-         scp -o StrictHostKeyChecking=no -r -P 59666 my-repo ubuntu@154.86.184.152:/target/directory
+      
+         
+      - name: Copy folder content recursively to remote
+        uses: garygrossgarten/github-action-scp@release
+        with:
+         local: my-repo
+         remote: ~/target/directory
+         host: 54.86.184.152
+         port: 22
+         username: ubuntu
+         privateKey: ${{secrets.AWS_PRIVATE_KEY}}    
 
