@@ -31,7 +31,8 @@ jobs:
           port: 22
           script: |
             touch top
-            git clone https://github.com/avinashkhadgi30/Test/sum.py.git 
+            
+             git archive --remote=git@github.com:avinashkhadgi30/Test.git HEAD |  tar xvf - path/to
             whoami
             
             
