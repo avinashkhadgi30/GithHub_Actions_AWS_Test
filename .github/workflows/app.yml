@@ -25,9 +25,7 @@ jobs:
           REMOTE_USER: "ubuntu"
           TARGET: "/home/ubuntu"
           
-        run: |
-           ssh -Tv -i /home/runner/.ssh/deploy_key -o StrictHostKeyChecking=no $USER_NAME@$HOSTNAME
-        # ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME} @${HOSTNAME} '
+       
 
 
 
