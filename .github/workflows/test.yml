@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: executing ssh commands using ssh key
        # uses: appleboy/ssh-action@master
-      - uses: actions/checkout@v2 
+        uses: actions/checkout@v2 
         with:
           host: ${{ secrets.HOSTNAME}}
           username: ubuntu
