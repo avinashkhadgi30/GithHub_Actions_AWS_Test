@@ -37,7 +37,7 @@ jobs:
       - name: Copy single file to remote
         uses: avinashkhadgi30/Test@main
         with:
-          local: Test/oof.txt
+          local: Test/sum.py
           remote: scp/single/sum.py
           host: ${{ secrets.HOSTNAME }}
           username: ubuntu
