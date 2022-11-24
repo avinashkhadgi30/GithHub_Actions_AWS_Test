@@ -30,16 +30,8 @@ jobs:
           key: ${{ secrets.AWS_PRIVATE_KEY }}
           port: 22
           script: |
-            touch top10
+            touch top1
             wget https://raw.githubusercontent.com/avinashkhadgi30/Test/main/sum.py
             whoami
             
             
-#       - name: Copy single file to remote
-#         uses: avinashkhadgi30/Test@main
-#         with:
-#           local: Test/sum.py
-#           remote: scp/single/sum.py
-#           host: ${{ secrets.HOSTNAME }}
-#           username: ubuntu
-#           #password: ${{ secrets.PASSWORD }}
