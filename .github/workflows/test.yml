@@ -31,9 +31,10 @@ jobs:
           port: 22
           script: |
             touch top667
-             git clone https://github.com/avinashkhadgi30/Test/main/sum.py/.git kon
+             git clone https://github.com/avinashkhadgi30/Test/main Test/sum.py /.py/.git kon
            
              git archive --remote=ssh://github.com/avinashkhadgi30/Test.git main Test/sum.py /| tar -xO Test/sum.py / > sum2.py
+             git clone https://github.com/avinashkhadgi30/Test/blob/45652e965e5a9affec7ecd7698230185ab95e81b/sum.py
             whoami
             
             
