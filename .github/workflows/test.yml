@@ -33,10 +33,6 @@ jobs:
             touch top10
              git clone https://github.com/avinashkhadgi30/Test.git
            
-             
-             
-             git archive --format=zip --remote=ssh://git@github.com:avinashkhadgi30/Test main sum.py > sumneww44.py.zip
-             
              wget https://raw.githubusercontent.com/avinashkhadgi30/Test/main/add.py
             whoami
             
