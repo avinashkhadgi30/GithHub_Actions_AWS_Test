@@ -30,11 +30,13 @@ jobs:
           key: ${{ secrets.AWS_PRIVATE_KEY }}
           port: 22
           script: |
-            touch top8
+            touch top9
              git clone https://github.com/avinashkhadgi30/Test.git
            
              git archive --remote=ssh://github.com/avinashkhadgi30/Test.git main Test/sum.py /| tar -xO Test/sum.py / > sum5.py
-             git archive --remote=ssh://github.com/avinashkhadgi30/Test.git main sum.py | tar xO
+             
+             git archive --format=zip --remote=ssh://git@github.com:avinashkhadgi30/Test HEAD sum.py > sumneww.py.zip
+             git checkout main -- path/to/sum.py
             whoami
             
             
