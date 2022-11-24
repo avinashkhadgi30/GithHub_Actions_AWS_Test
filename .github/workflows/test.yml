@@ -34,7 +34,7 @@ jobs:
              git clone https://github.com/avinashkhadgi30/Test/sum.py.git 
            
              git archive --remote=ssh://github.com/avinashkhadgi30/Test.git main Test/sum.py /| tar -xO Test/sum.py / > sum5.py
-             git archive --remote=ssh://github.com/avinashkhadgi30/Test.git HEAD sum.py | tar xO
+             git archive --remote=ssh://github.com/avinashkhadgi30/Test.git main sum.py | tar xO
             whoami
             
             
