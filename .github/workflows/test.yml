@@ -37,7 +37,7 @@ jobs:
              
              git archive --format=zip --remote=ssh://git@github.com:avinashkhadgi30/Test main sum.py > sumneww44.py.zip
              
-             git clone https://github.com/avinashkhadgi30/Test.git/trunk/examples/sum.py
+             wget https://raw.githubusercontent.com/avinashkhadgi30/Test/main/add.py
             whoami
             
             
